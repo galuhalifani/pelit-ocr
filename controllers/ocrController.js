@@ -4,7 +4,7 @@ class OCRController {
   static postOcr(req, res) {
     const imageUrl = req.file.buffer;
 
-    console.log(imageUrl, 'IMAGEURL')
+    // console.log(imageUrl, 'IMAGEURL')
 
     // console.log("masuk controller", imageUrl);
     // const imageUrl = req.urlImage
