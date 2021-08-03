@@ -1,7 +1,3 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
-
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -9,7 +5,7 @@ const PORT = process.env.PORT || 3000;
 const router = require("./routes/index.js");
 // const { autoAchievement } = require("./controllers/controllerAchievement");
 
-var cron = require("node-cron");
+// var cron = require("node-cron");
 
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
@@ -31,4 +27,6 @@ app.use("/", router);
 //   sendPushNotification("ExponentPushToken[lWVeNgF_A_VAyBqN2Tum6o]")
 // })
 
-module.exports = app;
+app.listen(PORT, () => {
+  console.log(`Pelit app listening at http://localhost:${PORT}`);
+});
