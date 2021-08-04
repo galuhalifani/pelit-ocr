@@ -114,10 +114,12 @@ const main = (data) => {
   // const reg3 = /[0-3][0-9][\/|-|\.|\s][0-3][0-9][\/|-|\.|\s][0-9][0-9]/g
 
   if (data.match(reg)) {
+    console.log('REG 1', data)
     let foundMatch = data.match(reg)[0];
     foundMatch = foundMatch.split(/\/|\.|\s/g);
     fullDate = new Date(foundMatch[2], foundMatch[1] - 1, foundMatch[0]);
   } else if (data.match(reg2)) {
+    console.log('REG 2', data)
     const toNumeric = [
       "jan",
       "feb",
@@ -141,6 +143,7 @@ const main = (data) => {
       foundMatch[0]
     );
   } else if (data.match(reg3)) {
+    console.log('REG 3', data)
     let foundMatch = data.match(reg3)[0];
     foundMatch = foundMatch.split(/\/|\.|\s/g);
     fullDate = new Date(
