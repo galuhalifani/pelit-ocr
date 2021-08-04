@@ -118,11 +118,15 @@ const main = (data) => {
     let foundMatch = data.match(reg)[0];
     console.log('FOUND MATCH', foundMatch)
     foundMatch = foundMatch.split(/\/|\.|\s/g);
-    fullDate = new Date(
-      Number("20" + foundMatch[2]),
-      foundMatch[1] - 1,
-      foundMatch[0]
-    );
+    if (foundMatch[2].length < 3) {
+      fullDate = new Date(
+        Number("20" + foundMatch[2]),
+        foundMatch[1] - 1,
+        foundMatch[0]
+      );  
+    } else {
+      fullDate = new Date(foundMatch[2], foundMatch[1] - 1, foundMatch[0]);
+    }
   } else if (data.match(reg2)) {
     console.log('REG 2', data)
     const toNumeric = [
@@ -142,11 +146,18 @@ const main = (data) => {
     let foundMatch = data.match(reg2)[0];
     foundMatch = foundMatch.split(/\/|\.|\s/g);
     // console.log(foundMatch)
+    if (foundMatch[2].length < 3) {
+      fullDate = new Date(
+        Number("20" + foundMatch[2]),
+        foundMatch[1] - 1,
+        foundMatch[0]
+      );  
+    } else {
     fullDate = new Date(
       foundMatch[2],
       toNumeric.indexOf(foundMatch[1].toLowerCase()),
       foundMatch[0]
-    );
+    )}
   } else if (data.match(reg3)) {
     console.log('REG 3', data)
     let foundMatch = data.match(reg3)[0];
