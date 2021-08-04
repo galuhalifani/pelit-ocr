@@ -15,6 +15,9 @@ const ocr = require("./ocr");
 // router.use("/", home);
 // router.use("/user", user);
 // router.use("/login", loginRouter);
+router.get('/', (req, res) => {
+    res.send('Welcome to Pelit OCR')
+})
 router.use("/ocr", ocr);
 // router.use("/register", registerRouter);
 // router.use("/transactions", transactions);

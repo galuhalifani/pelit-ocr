@@ -11,10 +11,6 @@ const router = require("./routes/index.js");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('Welcome to Pelit OCR')
-})
-
 app.use("/", router);
 
 // autoAchievement();
