@@ -118,7 +118,11 @@ const main = (data) => {
     let foundMatch = data.match(reg)[0];
     console.log('FOUND MATCH', foundMatch)
     foundMatch = foundMatch.split(/\/|\.|\s/g);
-    fullDate = new Date(foundMatch[2], foundMatch[1] - 1, foundMatch[0]);
+    fullDate = new Date(
+      Number("20" + foundMatch[2]),
+      foundMatch[1] - 1,
+      foundMatch[0]
+    );
   } else if (data.match(reg2)) {
     console.log('REG 2', data)
     const toNumeric = [
