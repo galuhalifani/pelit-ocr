@@ -114,7 +114,7 @@ const main = (data) => {
   // const reg3 = /[0-3][0-9][\/|-|\.|\s][0-3][0-9][\/|-|\.|\s][0-9][0-9]/g
 
   if (data.match(reg)) {
-    console.log('REG 1', data)
+    console.log('REG 1', data, 'REG 1')
     let foundMatch = data.match(reg)[0];
     console.log('FOUND MATCH', foundMatch)
     foundMatch = foundMatch.split(/\/|\.|\s/g);
@@ -128,7 +128,7 @@ const main = (data) => {
       fullDate = new Date(foundMatch[2], foundMatch[1] - 1, foundMatch[0]);
     }
   } else if (data.match(reg2)) {
-    console.log('REG 2', data)
+    console.log('REG 2', data, 'REG 2')
     const toNumeric = [
       "jan",
       "feb",
@@ -159,7 +159,7 @@ const main = (data) => {
       foundMatch[0]
     )}
   } else if (data.match(reg3)) {
-    console.log('REG 3', data)
+    console.log('REG 3', data, 'REG 3')
     let foundMatch = data.match(reg3)[0];
     foundMatch = foundMatch.split(/\/|\.|\s/g);
     fullDate = new Date(
@@ -178,7 +178,7 @@ const main = (data) => {
   const totalPriceNumber = Number(Math.abs(totalPriceStr.replace(",", "")));
   // console.log(totalPriceObj)
 
-  console.log({
+  console.log('PARSER RESULT', {
     title,
     total: totalPriceNumber,
     fullDate,
