@@ -4,7 +4,7 @@ class OCRController {
   static postOcr(req, res) {
     console.log(req.file.size, 'SIZE')
 
-    if (req.file.size > 250000) {
+    if (req.file.size > 270000) {
       console.log('image is too large');
       res.status(400).json({ message: "image is too large" });
     } else {
