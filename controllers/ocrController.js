@@ -22,7 +22,7 @@ class OCRController {
   
       tesseract(imageUrl)
         .then((dataObj) => {
-          // console.log("masuk tesseract", dataObj);
+          console.log("masuk tesseract");
           if (dataObj) {
             console.log('SUCCESS!')
             res.status(200).json({ ...dataObj });
